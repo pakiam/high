@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content=""/>
+
+    <style>
+        body{
+            position: relative;
+        }
+        .c-loader{
+            background-color: #eeeeee;
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            opacity: 1;
+        }
+        .c-loader__img {
+            position: absolute;
+            width: 12rem;
+            height: 10rem;
+            top: 50%;
+            left: 50%;
+            -webkit-animation: spin-logo 0.6s infinite;
+            animation: spin-logo 0.6s infinite;
+        }
+
+        @-webkit-keyframes spin-logo {
+            from {
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+            to {
+                -webkit-transform: rotateY(-360deg);
+                transform: rotateY(-360deg);
+            }
+        }
+
+        @keyframes spin-logo {
+            from {
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+            to {
+                -webkit-transform: rotateY(-360deg);
+                transform: rotateY(-360deg);
+            }
+        }
+    </style>
+    <script>
+        function ready() {
+            $('body').css('overflow','hidden');
+            $('.c-loader').animate({opacity: 0}, 1600,function(){
+                $(this).remove();
+                $('body').css('overflow','auto');
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", ready);
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css"/>
+    <!-- Foundation Flex -->
+    <link rel="stylesheet" href="libs/foundation-flex/foundation.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="libs/vex/vex.css">
+    <link rel="stylesheet" href="libs/vex/vex-theme-plain.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+    <!--    Favicon -->
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">-->
+    <!--<link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">-->
+    <!--<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">-->
+    <!--<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">-->
+    <!--<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">-->
+</head>
+<body>
+
+<div class="c-loader">
+    <img class="c-loader__img" src="img/logo.png" alt="">
+</div>
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!--HEADER START-->
+<header class="section header section--header">
+    <nav class="c-nav">
+        <div class="l-grid">
+            <ul class="c-nav__list">
+                <li class="c-list__item c-list__item--is-active"><a class="c-list__link"
+                                                                    href=".section--hero">Главная</a></li>
+                <li class="c-list__item"><a class="c-list__link" href=".section--apartments">Апартаменты</a></li>
+                <li class="c-list__item"><a class="c-list__link" href=".section--spa">Спа и Баня</a></li>
+                <li class="c-list__item"><a class="c-list__link" href=".section--lounge">Лаунж зона</a></li>
+                <li class="c-list__item"><a class="c-list__link" href=".section--sport">Спорт-площадка</a></li>
+                <li class="c-list__item"><a class="c-list__link" href=".section--services">Услуги</a></li>
+                <li class="c-list__item"><a class="c-list__link" href=".section--stars">Портфолио</a></li>
+                <li class="c-list__item"><a class="c-list__link" href=".section--map">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-line">
+        <div class="row">
+            <div class="small-8 medium-8 large-8 columns">
+                <div class="row align-middle">
+                    <div class="medium-3 align-center columns">
+                        <img src="img/logo.png" alt="На Высоте" class="header__logo">
+                    </div>
+                    <div class="medium-6  columns">
+                        <h2 class="header-line__title">Лаунж-терасса <br>на высоте птичьего полета</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-4 medium-4 large-3 large-offset-1 align-center align-middle columns">
+                <p class="header-line__text header-line__text--phones">+7 (812) 621-60-06</p>
+                <p class="header-line__text header-line__text--phones">+7 (900) 637-47-37</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!--HEADER END-->
+
+<!--MAIN START-->
+<main class="main">
+
+    <!--SECTION HERO START-->
+    <section class="section section--hero">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="c-hero-slider__slide">
+                        <img src="img/apartments-bg.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c-hero-slider__slide">
+                        <img src="img/spa-bg.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c-hero-slider__slide">
+                        <img src="img/sport-bg.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="hero-descriptor__wrapper">
+            <div class="hero-descriptor">
+                <p class="hero-descriptor__pretitle">Отдыхайте в лучшем <br> месте Санкт-Петербурга</p>
+                <h1 class="hero-descriptor__title">На высоте птичьего полёта</h1>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </section>
+    <!--SECTION HERO END-->
+
+    <!--SECTION BOOKING START-->
+    <section class="section section--booking">
+        <h1 class="section__title">Забронируйте номер онлайн</h1>
+        <form action="" class="c-form booking__form">
+            <div class="row">
+                <div class="small-6 medium-2 medium-offset-1 large-2 large-offset-0 columns">
+                    <div class="c-form-field ">
+                        <label class="c-form-field__label" for="">Дата заезда:</label>
+                        <input class="c-form-field__input" type="text" name="dateIn">
+                    </div>
+                </div>
+
+                <div class="small-6 medium-2 large-2 columns">
+                    <div class="c-form-field">
+                        <label class="c-form-field__label" for="">Дата выезда:</label>
+                        <input class="c-form-field__input" type="text" name="dateOut">
+                    </div>
+                </div>
+
+                <div class="small-6 medium-2 large-2 columns">
+                    <div class="c-form-field">
+                        <label class="c-form-field__label" for="">Кол-во человек:</label>
+                        <input class="c-form-field__input" type="number" name="peopleCount">
+                    </div>
+                </div>
+
+                <div class="small-6 medium-2 large-2 columns">
+                    <div class="c-form-field">
+                        <label class="c-form-field__label" for="">Номер телефона:</label>
+                        <input class="c-form-field__input" type="tel" name="phoneNumber">
+                    </div>
+                </div>
+
+                <div class="small-12 medium-3 large-3 end align-right columns">
+                    <button class="c-button c-button--booking">Отправить заявку</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!--SECTION BOOKING END-->
+
+    <!--SECTION SERVICES START-->
+    <section class="section section--services">
+        <h1 class="section__title section__title--super">К вашим услугам</h1>
+        <div class="services__items">
+            <div class="row">
+                <!--SERVICE ITEM START-->
+                <div class="small-4 medium-4  columns">
+                    <div class="services__item">
+                        <img src="img/service-aps.png" alt="#" class="item__img">
+                        <h2 class="item__title">Апартаменты</h2>
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+
+                <!--SERVICE ITEM START-->
+                <div class="small-4 medium-4 columns">
+                    <div class="services__item">
+                        <img src="img/service-spa.png" alt="#" class="item__img">
+                        <h2 class="item__title">Баня и спа</h2>
+
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+
+                <!--SERVICE ITEM START-->
+                <div class="small-4 medium-4  columns">
+                    <div class="services__item">
+                        <img src="img/service-terrase.png" alt="#" class="item__img">
+                        <h2 class="item__title">Панорамная терасса</h2>
+
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+
+                <!--SERVICE ITEM START-->
+                <div class="small-4 medium-4  columns">
+                    <div class="services__item">
+                        <img src="img/service-sport.png" alt="#" class="item__img">
+                        <h2 class="item__title">Спортивная площадка</h2>
+
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+
+                <!--SERVICE ITEM START-->
+                <div class="small-4 medium-4  columns">
+                    <div class="services__item">
+                        <img src="img/service-date.png" alt="#" class="item__img">
+                        <h2 class="item__title">Романтические свидания</h2>
+
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+
+                <!--SERVICE ITEM START-->
+                <div class="small-4 medium-4  columns">
+                    <div class="services__item">
+                        <img src="img/service-events.png" alt="#" class="item__img">
+                        <h2 class="item__title">Организация мероприятий</h2>
+
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+            </div>
+        </div>
+    </section>
+    <!--SECTION SERVICES END-->
+
+    <!--SECTION APARTMENTS START-->
+    <section class="section section--apartments">
+        <div class="section__bottom">
+            <div class="l-grid">
+                <div class="l-row">
+                    <div class="section__descriptor">
+                        <h1 class="section__descriptor__title">Роскошные апартаменты</h1>
+                        <p class="section__descriptor__subtitle">С панорамным видом</p>
+                    </div>
+                    <ul class="section__benefits-list">
+                        <li class="section__benefits-list__item">Площадь 90м<sup>2</sup></li>
+                        <li class="section__benefits-list__item">4 спальни</li>
+                        <li class="section__benefits-list__item">Консьерж-сервис</li>
+                        <li class="section__benefits-list__item">Подземный паркинг</li>
+                        <li class="section__benefits-list__item">Личный шеф-повар</li>
+                    </ul>
+                </div>
+                <div class="l-row l-row--center">
+                    <button class="c-button c-button--section">Забронировать номер</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION APARTMENTS END-->
+
+    <!--SECTION SPA START-->
+    <section class="section section--spa">
+        <div class="section__bottom">
+            <div class="l-grid">
+                <div class="l-row">
+                    <div class="section__descriptor">
+                        <p class="section__descriptor__subtitle">Роскошный Спа-комплекс и</p>
+                        <h1 class="section__descriptor__title">Русская баня премиум-класса</h1>
+                    </div>
+                    <ul class="section__benefits-list">
+                        <li class="section__benefits-list__item">Уютная зона отдыха</li>
+                        <li class="section__benefits-list__item">Пофессиональные парильщики</li>
+                        <li class="section__benefits-list__item">Печка на нефритовых камнях со дна о. Байкал</li>
+                        <li class="section__benefits-list__item">Чайные церемонии</li>
+                        <li class="section__benefits-list__item">Джакузи под открытым небом</li>
+                    </ul>
+                </div>
+                <div class="l-row l-row--center">
+                    <button class="c-button c-button--section">Забронировать номер</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION SPA END-->
+
+    <!--SECTION LOUNGE START-->
+    <section class="section section--lounge">
+        <div class="section__bottom">
+            <div class="l-grid">
+                <div class="l-row">
+                    <div class="section__descriptor">
+                        <h1 class="section__descriptor__title">Просторная lounge-зона</h1>
+                        <p class="section__descriptor__subtitle">На высоте птичьего полёта</p>
+                    </div>
+                    <ul class="section__benefits-list">
+                        <li class="section__benefits-list__item">Площадь 200м<sup>2</sup> на 30 человек</li>
+                        <li class="section__benefits-list__item">Столики, стулья, шезлонги</li>
+                        <li class="section__benefits-list__item">Комфортная беедка с барбекю</li>
+                        <li class="section__benefits-list__item">Для закрытых вечеринок и мероприятий</li>
+                        <li class="section__benefits-list__item">Летний кинотеатр</li>
+                    </ul>
+                </div>
+                <div class="l-row l-row--center">
+                    <button class="c-button c-button--section">Забронировать номер</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION LOUNGE END-->
+
+    <!--SECTION SPORT START-->
+    <section class="section section--sport">
+        <div class="section__bottom">
+            <div class="l-grid">
+                <div class="l-row">
+                    <div class="section__descriptor">
+                        <h1 class="section__descriptor__title">Спортивная площадка</h1>
+                        <p class="section__descriptor__subtitle">для тех, кто ценит красоту</p>
+                    </div>
+                    <ul class="section__benefits-list">
+                        <li class="section__benefits-list__item">Турники</li>
+                        <li class="section__benefits-list__item">Железо</li>
+                        <li class="section__benefits-list__item">Боксёрская груша</li>
+                        <li class="section__benefits-list__item">Площадка для групповых занятий</li>
+                    </ul>
+                </div>
+                <div class="l-row l-row--center">
+                    <button class="c-button c-button--section">Забронировать номер</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION SPORT END-->
+
+    <!--SECTION DATES START-->
+    <section class="section section--dates">
+        <div class="section__bottom">
+            <div class="l-grid">
+                <div class="l-row">
+                    <div class="section__descriptor">
+                        <p class="section__descriptor__subtitle">Незабываемые ужины и</p>
+                        <h1 class="section__descriptor__title">Романтические свидания</h1>
+                    </div>
+                    <ul class="section__benefits-list">
+                        <li class="section__benefits-list__item">Закрытое место для двоих</li>
+                        <li class="section__benefits-list__item">Живая музыка</li>
+                        <li class="section__benefits-list__item">Интимная атмосфера, уютные пледы</li>
+                        <li class="section__benefits-list__item">Вкусные блюда и напитки</li>
+                        <li class="section__benefits-list__item">Трансфер на белом Mercedes-Benz</li>
+                    </ul>
+                </div>
+                <div class="l-row l-row--center">
+                    <button class="c-button c-button--section">Забронировать номер</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION DATES END-->
+
+    <!--SECTION EVENTS START-->
+    <section class="section section--events">
+        <div class="section__bottom">
+            <div class="l-grid">
+                <div class="l-row">
+                    <div class="section__descriptor">
+                        <h1 class="section__descriptor__title">Организация мероприятий</h1>
+                        <p class="section__descriptor__subtitle">От семинара до дня рождения</p>
+                    </div>
+                    <ul class="section__benefits-list">
+                        <li class="section__benefits-list__item">Корпоративы</li>
+                        <li class="section__benefits-list__item">Дни Рождения</li>
+                        <li class="section__benefits-list__item">Проведение семинаров и тренингов</li>
+                        <li class="section__benefits-list__item">Закрытые встречи</li>
+                        <li class="section__benefits-list__item">Профессиональное фото и видео съёмка</li>
+                    </ul>
+                </div>
+                <div class="l-row l-row--center">
+                    <button class="c-button c-button--section">Забронировать номер</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION EVENTS END-->
+
+    <!--SECTION CONTACT START-->
+    <section class="section section--contact">
+        <div class="l-row l-row--center">
+            <h1 class="contact__title">Давайте обсудим специальные условия прямо сейчас?</h1>
+        </div>
+        <div class="row">
+            <form action="" class="c-form-column contact__form">
+                <div class="row">
+                    <div class="small-12 columns">
+                        <div class="c-form-column-field">
+                            <input class="c-form-column-field__input" type="text" name="fullName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="small-6 columns">
+                        <div class="c-form-column-field">
+                            <input class="c-form-column-field__input" type="tel" name="phoneNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-6 columns">
+                        <button class="c-button c-button--center c-button--type2">Заказать звонок</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--SECTION CONTACT END-->
+
+    <!--SECTION STARS START-->
+    <section class="section section--stars">
+        <div class="l-grid">
+            <div class="l-row l-row--center">
+                <h1 class="stars__title">Звезды отдыхают на высоте</h1>
+            </div>
+        </div>
+        <div class="c-slider">
+            <div class="c-slider-wrapper">
+                <div class="row row--fixed">
+                    <div class="small-8 medium-8 large-8 align-middle columns">
+                        <div class="c-slider__content">
+                            <div class="c-slider__content__item">
+                                <img src="img/slide1.jpg" alt="">
+                            </div>
+                            <div class="c-slider__content__item">
+                                2
+                            </div>
+                            <div class="c-slider__content__item">
+                                3
+                            </div>
+                            <div class="c-slider__content__item">
+                                4
+                            </div>
+                            <div class="c-slider__content__item">
+                                5
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="small-4 medium-4 large-4 columns">
+                        <div class="c-slider__content-list c-slider__content-list--vertical">
+
+                            <div class="c-slider__list-item__control-up"><i class="fa fa-chevron-up"></i></div>
+                            <div class="c-slider__list-item__control-down"><i class="fa fa-chevron-down"></i></div>
+                            <div class="c-slider__content-list__wrapper">
+
+                                <div class="c-slider__list-item c-slider__list-item--is-active">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+
+                                <div class="c-slider__list-item">
+                                    <div class="c-slider__list-item__img">
+                                        <img src="img/star1.jpg" alt="" class="c-slider__list-item__image">
+                                    </div>
+                                    <div class="c-slider__list-item__text">
+                                        <div class="c-slider__list-item__name">Бентлис & Феромоны</div>
+                                        <div class="c-slider__list-item__sub-name">Музыкальная группа</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION STARS END-->
+
+    <!--SECTION TEAM START-->
+    <section class="section section--team">
+        <h1 class="section__title section__title--super">Наша команда</h1>
+        <div class="row">
+            <div class="team-swiper">
+                <div class="team-swiper-button-next"><i class="fa fa-chevron-right"></i></div>
+                <div class="team-swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide c-hor-slider__list-item c-hor-slider__list-item--is-active">
+                        <div class="c-hor-slider__list-item__img">
+                            <img src="img/star1.jpg" alt="" class="c-hor-slider__list-item__image">
+                        </div>
+                        <div class="c-hor-slider__list-item__text">
+                            <div class="c-hor-slider__list-item__name">Бентлис & Феромоны</div>
+                            <div class="c-hor-slider__list-item__sub-name">Музыкальная группа</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide c-hor-slider__list-item">
+                        <div class="c-hor-slider__list-item__img">
+                            <img src="img/star1.jpg" alt="" class="c-hor-slider__list-item__image">
+                        </div>
+                        <div class="c-hor-slider__list-item__text">
+                            <div class="c-hor-slider__list-item__name">Бентлис & Феромоны</div>
+                            <div class="c-hor-slider__list-item__sub-name">Музыкальная группа</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide c-hor-slider__list-item">
+                        <div class="c-hor-slider__list-item__img">
+                            <img src="img/star1.jpg" alt="" class="c-hor-slider__list-item__image">
+                        </div>
+                        <div class="c-hor-slider__list-item__text">
+                            <div class="c-hor-slider__list-item__name">Бентлис & Феромоны</div>
+                            <div class="c-hor-slider__list-item__sub-name">Музыкальная группа</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide c-hor-slider__list-item">
+                        <div class="c-hor-slider__list-item__img">
+                            <img src="img/star1.jpg" alt="" class="c-hor-slider__list-item__image">
+                        </div>
+                        <div class="c-hor-slider__list-item__text">
+                            <div class="c-hor-slider__list-item__name">Бентлис & Феромоны</div>
+                            <div class="c-hor-slider__list-item__sub-name">Музыкальная группа</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide c-hor-slider__list-item">
+                        <div class="c-hor-slider__list-item__img">
+                            <img src="img/star1.jpg" alt="" class="c-hor-slider__list-item__image">
+                        </div>
+                        <div class="c-hor-slider__list-item__text">
+                            <div class="c-hor-slider__list-item__name">Бентлис & Феромоны</div>
+                            <div class="c-hor-slider__list-item__sub-name">Музыкальная группа</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide c-hor-slider__list-item">
+                        <div class="c-hor-slider__list-item__img">
+                            <img src="img/star1.jpg" alt="" class="c-hor-slider__list-item__image">
+                        </div>
+                        <div class="c-hor-slider__list-item__text">
+                            <div class="c-hor-slider__list-item__name">Бентлис & Феромоны</div>
+                            <div class="c-hor-slider__list-item__sub-name">Музыкальная группа</div>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide c-hor-slider__list-item">
+                        <div class="c-hor-slider__list-item__img">
+                            <img src="img/star1.jpg" alt="" class="c-hor-slider__list-item__image">
+                        </div>
+                        <div class="c-hor-slider__list-item__text">
+                            <div class="c-hor-slider__list-item__name">Бентлис & Феромоны</div>
+                            <div class="c-hor-slider__list-item__sub-name">Музыкальная группа</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="c-hor-slider__content">
+            <div class="row">
+                <div class="small-12 medium-12 large-12 align-middle align-center columns">
+                    <div class="c-hor-slider__content__item">
+                        <div class="row">
+                            <div class="small-6 columns">
+                                <div class="c-hor-slider__content__item__image">
+                                    <img src="img/team1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="small-6 columns">
+                                <p class="c-hor-slider__content__item__subtitle">Мастер массажа 0</p>
+                                <h1 class="c-hor-slider__content__item__title">Александр Иванов</h1>
+                                <p class="c-hor-slider__content__item__text">
+                                    Глава российского государства информировал Президента США как главу страны –
+                                    сопредседателя Минской группы ОБСЕ (Россия, США, Франция) по нагорно-карабахскому
+                                    урегулированию об итогах состоявшейся 20 июня в Санкт-Петербурге трехсторонней
+                                    встречи.
+                                    Владимир Путин подчеркнул, что при организации переговоров Россия исходила из
+                                    необходимости содействия скорейшей стабилизации ситуации в зоне конфликта и созданию
+                                    условий для продвижения мирного процесса. Барак Обама дал высокую оценку
+                                    предпринятым Россией усилиям. Условлено продолжить активную совместную работу в
+                                    рамках Минской группы ОБСЕ на этом важном направлении.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="c-hor-slider__content__item">
+                        <div class="row">
+                            <div class="small-6 columns">
+                                <div class="c-hor-slider__content__item__image">
+                                    <img src="img/team1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="small-6 columns">
+                                <p class="c-hor-slider__content__item__subtitle">Мастер массажа 1</p>
+                                <h1 class="c-hor-slider__content__item__title">Александр Иванов</h1>
+                                <p class="c-hor-slider__content__item__text">
+                                    Глава российского государства информировал Президента США как главу страны –
+                                    сопредседателя Минской группы ОБСЕ (Россия, США, Франция) по нагорно-карабахскому
+                                    урегулированию об итогах состоявшейся 20 июня в Санкт-Петербурге трехсторонней
+                                    встречи.
+                                    Владимир Путин подчеркнул, что при организации переговоров Россия исходила из
+                                    необходимости содействия скорейшей стабилизации ситуации в зоне конфликта и созданию
+                                    условий для продвижения мирного процесса. Барак Обама дал высокую оценку
+                                    предпринятым Россией усилиям. Условлено продолжить активную совместную работу в
+                                    рамках Минской группы ОБСЕ на этом важном направлении.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="c-hor-slider__content__item">
+                        <div class="row">
+                            <div class="small-6 columns">
+                                <div class="c-hor-slider__content__item__image">
+                                    <img src="img/team1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="small-6 columns">
+                                <p class="c-hor-slider__content__item__subtitle">Мастер массажа 2</p>
+                                <h1 class="c-hor-slider__content__item__title">Александр Иванов</h1>
+                                <p class="c-hor-slider__content__item__text">
+                                    Глава российского государства информировал Президента США как главу страны –
+                                    сопредседателя Минской группы ОБСЕ (Россия, США, Франция) по нагорно-карабахскому
+                                    урегулированию об итогах состоявшейся 20 июня в Санкт-Петербурге трехсторонней
+                                    встречи.
+                                    Владимир Путин подчеркнул, что при организации переговоров Россия исходила из
+                                    необходимости содействия скорейшей стабилизации ситуации в зоне конфликта и созданию
+                                    условий для продвижения мирного процесса. Барак Обама дал высокую оценку
+                                    предпринятым Россией усилиям. Условлено продолжить активную совместную работу в
+                                    рамках Минской группы ОБСЕ на этом важном направлении.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="c-hor-slider__content__item">
+                        <div class="row">
+                            <div class="small-6 columns">
+                                <div class="c-hor-slider__content__item__image">
+                                    <img src="img/team1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="small-6 columns">
+                                <p class="c-hor-slider__content__item__subtitle">Мастер массажа 3</p>
+                                <h1 class="c-hor-slider__content__item__title">Александр Иванов</h1>
+                                <p class="c-hor-slider__content__item__text">
+                                    Глава российского государства информировал Президента США как главу страны –
+                                    сопредседателя Минской группы ОБСЕ (Россия, США, Франция) по нагорно-карабахскому
+                                    урегулированию об итогах состоявшейся 20 июня в Санкт-Петербурге трехсторонней
+                                    встречи.
+                                    Владимир Путин подчеркнул, что при организации переговоров Россия исходила из
+                                    необходимости содействия скорейшей стабилизации ситуации в зоне конфликта и созданию
+                                    условий для продвижения мирного процесса. Барак Обама дал высокую оценку
+                                    предпринятым Россией усилиям. Условлено продолжить активную совместную работу в
+                                    рамках Минской группы ОБСЕ на этом важном направлении.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--SECTION TEAM END-->
+
+    <!--SECTION MAP START-->
+    <section class="section section--map">
+        <div class="map-descriptor">
+            <p class="map-descriptor__pretitle">Мы всегда ждем вас по адресу:</p>
+            <h1 class="map-descriptor__title">Санкт-Петербург <br>Ул. Матроса Железняка, 57А</h1>
+            <h2 class="map-descriptor__adress">20 минут от метро "Пионерская"</h2>
+            <h2 class="map-descriptor__adress">25 минут от метро "Черная речка"</h2>
+        </div>
+        <div id="map"></div>
+    </section>
+    <!--SECTION MAP END-->
+
+    <!--SECTION QUESTIONS START-->
+    <section class="section section--contact section--questions">
+        <div class="l-row l-row--center">
+            <h1 class="contact__title">Остались вопросы? Пишите нам!</h1>
+        </div>
+        <div class="row">
+            <form action="" class="c-form-column contact__form">
+
+                <div class="row">
+                    <div class="small-6 columns">
+                        <div class="c-form-column-field">
+                            <input class="c-form-column-field__input c-form-column-field__input--transparent"
+                                   type="text"
+                                   name="fullName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="small-6 columns">
+                        <div class="c-form-column-field">
+                            <input class="c-form-column-field__input c-form-column-field__input--transparent" type="tel"
+                                   name="phoneNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-6 columns">
+                        <button class="c-button c-button--center c-button--type2">Заказать звонок</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--SECTION QUESTIONS END-->
+</main>
+<!--MAIN END-->
+
+<!--FOOTER START-->
+<footer class="footer">
+    <div class="footer__header">
+        <div class="l-grid">
+            <ul class="c-nav__list c-nav__list--full c-nav__list--bb">
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Главная</a></li>
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Апартаменты</a></li>
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Спа и Баня</a></li>
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Лаунж зона</a></li>
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Спорт-площадка</a></li>
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Услуги</a></li>
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Портфолио</a></li>
+                <li class="c-list__item"><a class="c-list__link c-list__link--dark" href="">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer__bottom">
+        <div class="row">
+            <div class="small-8 columns">
+                <ul class="footer__socials__list">
+                    <li class="list__item"><a class="socials-link" href="http://tripadvisor.com"><i
+                            class="fa fa-tripadvisor"></i></a></li>
+                    <li class="list__item"><a class="socials-link" href="http://vk.com"><i class="fa fa-vk"></i></a>
+                    </li>
+                    <li class="list__item"><a class="socials-link" href="http://facebook.com"><i
+                            class="fa fa-facebook"></i></a></li>
+                    <li class="list__item"><a class="socials-link" href="http://instagram.com"><i
+                            class="fa fa-instagram"></i></a></li>
+                    <li class="list__item"><a class="socials-link" href="http://foursquare.com"><i
+                            class="fa fa-foursquare"></i></a></li>
+                    <li class="list__item"><a class="socials-link" href="http://foursquare.com"><i
+                            class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="small-4 columns">
+                <div class="footer__phones">
+                    <p class="footer__text">+7 (812) 621-60-06</p>
+                    <p class="footer__text">+7 (900) 637-47-37</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--FOOTER END-->
+
+
+<!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+<!-- Google Analytics counter --><!-- /Google Analytics counter -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="libs/jQuery/jquery-2.1.4.min.js"><\/script>')</script>
+<script src="libs/waipoints/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+<script src="libs/maskedinput/jquery.masked.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="libs/datepicker-ru/datepicker-ru.js"></script>
+<script src="libs/vex/vex.combined.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdxbkpWysk06Pcy9aPLigOBx78F5ziUpc&signed_in=false&callback=initMap"
+        async defer></script>
+<script src="js/main.js"></script>
+</body>
+</html>

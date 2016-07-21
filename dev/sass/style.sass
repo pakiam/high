@@ -1,0 +1,779 @@
+@import "compass/reset"
+@import "compass/css3/border-radius"
+@import "variables"
+@import "typography"
+
+
+//GLOBAL STYLES
+input:-webkit-autofill
+  background: #fff !important
+input
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  -o-appearance: none
+  appearance: none
+  border-radius: 0
+  outline: none
+html
+  font-size: 62.5%
+body
+  font-family: $font
+  font-size: 1.6rem
+  background-color: #b5721b
+  position: relative
+.fixed
+  position: fixed
+  top: 0
+  transition: all 0.2s
+  z-index: 20
+.row
+  max-width: 94rem
+.l-grid
+  max-width: 1200px
+  margin: 0 auto
+  padding-left: 10px
+  padding-right: 10px
+.l-row
+  display: flex
+  flex-flow: row wrap
+  padding: 1rem 0
+.l-row--center
+  align-items: center
+  justify-content: center
+.section
+  border-bottom: 2px solid #eabc23
+.section__title
+  text-transform: uppercase
+  color: #ffffff
+  text-align: center
+  font-size: 2rem
+  letter-spacing: 1px
+  padding: 2rem 0
+  font-family: $font-accent
+.section__title--super
+  color: $brand-color
+  font-size: 4.6rem
+  font-family: $font-accent
+  background-image: url(../img/super-title-bg.png)
+  background-position: center center
+  background-repeat: no-repeat
+  //background-size: contain
+  margin-top: -59px
+  padding: 34px 0
+  position: absolute
+  width: 100%
+sup
+  vertical-align: super
+  font-size: smaller
+
+input[type="date"]:after
+  font-family: 'FontAwesome'
+  content: "\f073"
+  color: #ffffff
+  font-style: normal
+//HEADER STYLES
+.header
+  position: relative
+  background-color: #fff
+  border-bottom: 2px solid #eabc23
+  box-shadow: 1px 1px 10px rgba(0,0,0,.3)
+.c-nav
+  background-image: url(../img/header-menu-bg.png)
+  width: 100%
+.c-nav--nobg
+  background-image: none
+.c-nav__list
+  font-size: 1.5rem
+  display: flex
+  flex-flow: row wrap
+  align-content: space-between
+  align-items: center
+  font-family: $font-secondary
+  text-transform: uppercase
+  text-align: center
+  width: 86%
+  margin-left: auto
+.c-nav__list--full
+  width: 100%
+.c-nav__list--bb
+  border-bottom: 1px solid #cccccb
+.c-list__item
+  flex-grow: 1
+  flex-shrink: 0
+  padding: 1rem 0
+  transition: all 0.2s
+  &:hover
+    background-color: #e09a16
+.c-list__item--is-active
+  background-color: #f4bf22
+.c-list__link
+  color: #ffffff
+  text-decoration: none
+.c-list__link--dark
+  color: #665942
+.header__logo
+  max-width: 100%
+  margin-top: -3.2rem
+.header-line
+  padding: 1rem 0 0 0
+.header-line__title
+  font-size: 1.8rem
+  font-style: italic
+  font-weight: 300
+  color: #6a6a6a
+.header-line__text--small
+  font-size: 1.2rem
+  color: #777777
+  width: 37%
+.header-line__text--phones
+  font-family: $font-accent
+  margin-bottom: 1rem
+  font-size: 2.6rem
+  color: #e19d0d
+
+//SECTION HERO
+.section--hero
+  position: relative
+.hero-descriptor__wrapper
+  position: absolute
+  left: 18%
+  z-index: 2
+  margin: 0 auto
+  bottom: 0
+.hero-descriptor
+  background-color: rgba(0,0,0,.5)
+  padding: 1rem
+  width: 40%
+  text-align: left
+  margin-bottom: 4rem
+.hero-descriptor__pretitle
+  color: #ffffff
+  font-size: 2rem
+.hero-descriptor__title
+  margin-top: 1rem
+  font-family: $font-accent
+  color: $header-title-color
+  font-size: 5.3rem
+  text-transform: uppercase
+.c-hero-slider__slide
+  img
+    width: 100%
+    height: 100%
+.swiper-container
+  height: 100%
+.swiper-button-next, .swiper-button-prev
+  width: 6rem
+  height: 11rem
+  right: 0
+  background-image: url(../img/arrow.png)
+  background-size: contain
+  &:hover
+    background-image: url(../img/arrow-hover.png)
+  &:active
+    background-image: url(../img/arrow-active.png)
+.swiper-button-prev
+  left: 0
+  transform: rotate(180deg)
+//SECTION BOOKING FORM
+.section--booking
+  background-image: url(../img/header-menu-bg.png)
+  background-repeat: repeat
+  padding-bottom: 75px
+  border-bottom: none
+  color: #f7eddd
+.c-form
+
+.c-form-field
+  font-size: 1.4rem
+  display: flex
+  flex-flow: column wrap
+  flex: 1 0 20%
+  width: 100%
+  position: relative
+  .ui-datepicker-trigger
+    position: absolute
+    right: .4rem
+    top: 50%
+.c-form-field__label
+  color: #ffffff
+  margin-bottom: 0.4rem
+  font-size: 1.2rem
+.c-form-field__input
+  font-family: Arial, sans-serif
+  font-style: italic
+  background-color: #cb9400
+  outline: none
+  border: 1px solid #ffffff
+  padding: .4rem
+  color: #ffffff
+  height: 3.2rem
+  box-shadow: none
+  font-size: inherit
+  width: 100%
+
+.c-form-column
+  display: flex
+  flex-flow: column wrap
+  align-content: center
+  align-items: center
+.c-form-column-field
+  font-size: 1.4rem
+  display: flex
+  flex-flow: row wrap
+  flex: 1 0 20%
+  width: 40rem
+  margin-bottom: 2rem
+  &:last-of-type
+    margin-bottom: 4rem
+.c-form-column-field__input
+  background-color: rgba(255, 255, 255, .4)
+  border: 1px solid #c38b15
+  border-radius: 3px / 3px 3px 3px 3px
+  color: #c48c16
+  font-family: $font
+  font-size: 2.4rem
+  font-style: italic
+  outline: none
+  width: 99%
+  height: 5.8rem
+  padding: 0 1.6rem
+.c-form-column-field__input--transparent
+  background-color: rgba(255, 255, 255, .1)
+.c-button
+  border-radius: 2px
+  background-color: #f7c446
+  box-shadow: 0 1px 1px rgba(104,72,15,.63), inset 0 1px 0 rgba(255,255,255,.3)
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(255,255,255,.15) 100%)
+  padding: 1.2rem 3.4rem
+  outline: none
+  border: none
+  cursor: pointer
+  display: block
+  margin-top: 1rem
+  margin-left: auto
+  &:hover
+    background-color: #fdd063
+    box-shadow: 0 1px 1px rgba(104,72,15,.63), inset 0 1px 0 rgba(255,255,255,.3)
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(255,255,255,.15) 100%)
+  &:active
+    background-color: #f7c446 // layer fill content
+    box-shadow: 0 1px 0 #ffe6a5, inset 0 2px 0 rgba(98,69,14,.64)
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.18) 0%, rgba(0,0,0,.18) 100%)
+
+
+.c-button--type2
+  color: #ffffff
+  font-family: $font
+  font-size: 2.4rem
+  border-radius: 4px
+  background-color: #d7a01a
+  box-shadow: 0 1px 0 #996913
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(255,255,255,.1) 100%)
+  height: 6.6rem
+  width: 40rem
+  &:hover
+    background-color: #edb428
+  &:active
+    background-color: #cd9714
+    box-shadow: inset 0 2px 0 rgba(142,105,16,.7)
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.1) 0%, rgba(0,0,0,.1) 100%)
+
+
+.c-button--center
+  align-self: center
+.c-button--section
+  color: #f7eddd
+  font-style: italic
+  font-size: 2rem
+  width: 29rem
+  font-family: $font
+  background-color: #d29a0f
+  box-shadow: 0 1px 1px rgba(104,72,15,.63), inset 0 1px 0 rgba(255,255,255,.3)
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(255,255,255,.15) 100%)
+  margin-left: 0
+  &:hover
+    background-color: #e5ad24
+    box-shadow: 0 1px 1px rgba(104,72,15,.63), inset 0 1px 0 rgba(255,255,255,.3)
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(255,255,255,.15) 100%)
+  &:active
+    background-color: #d29a0f
+    box-shadow: 0 1px 0 #ffd68e, inset 0 2px 0 #654507
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.13) 0%, rgba(0,0,0,.13) 100%)
+
+
+
+//SECTION SERVICES
+.section--services
+  background-color: #fff
+  position: relative
+  padding-bottom: 3rem
+.services__items
+  //display: flex
+  //flex-flow: row wrap
+  padding-top: 6rem
+  //text-align: center
+  //align-content: center
+  //align-items: stretch
+.services__item
+  //flex: 1 0 29%
+  text-align: center
+  margin-top: 2rem
+.item__img
+  clip-path: circle(8.5rem at center)
+  height: 18rem
+  max-width: 100%
+  max-height: 100%
+.item__title
+  font-family: $font-accent
+  font-size: 3.3rem
+  padding-top: 1rem
+  padding-bottom: 0.6rem
+  text-transform: uppercase
+  color: $sub-header-title-color
+.item__text
+  font-family: Arial, sans-serif
+  font-size: 1.4rem
+//SECTION APARTMENTS
+.section--hero, .section--apartments, .section--spa, .section--lounge, .section--sport, .section--dates, .section--events
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center center
+  height: 92vh
+  display: flex
+  align-items: flex-end
+.section--team, .section--stars
+  padding-bottom: 12rem
+.section--apartments
+  background-image: url(../img/apartments-bg.jpg)
+.section__bottom
+  background-color: rgba(0, 0, 0, .6)
+  padding-top: 3rem
+  width: 100%
+  padding-bottom: 1rem
+.section__descriptor
+  flex-grow: 1
+  flex-shrink: 0
+  width: 42%
+  text-transform: uppercase
+  border-right: 1px solid #7f7d75
+.section__descriptor__title
+  font-family: $font-accent
+  color: $header-title-color
+  font-size: 5rem
+  padding-left: 2rem
+.section__descriptor__subtitle
+  font-size: 2rem
+  color: #ffffff
+  padding-left: 2rem
+.section__benefits-list
+  flex-grow: 1
+  flex-shrink: 0
+  padding-left: 12%
+  width: 42%
+  align-self: center
+  margin: 0 auto
+  color: #ffffff
+  font-size: 1.8rem
+  font-style: italic
+.section__benefits-list__item:not(:first-child)
+  margin-top: .4rem
+.section__benefits-list__item:before
+  display: inline-block
+  content: "\2014\a0"
+  width: 1rem
+  margin-right: 1rem
+
+//SECTION SPA
+.section--spa
+  background-image: url(https://scontent.xx.fbcdn.net/v/t1.0-9/12376217_1560436217610648_8279317079619673583_n.jpg?oh=9557a943859746f1a304c7a76f91f6df&oe=581D2BD4)
+  background-position: center top
+
+//SECTION LOUNGE
+.section--lounge
+  background-image: url(../img/lounge-bg.jpg)
+
+//SECTION SPORT
+.section--sport
+  background-image: url(../img/sport-bg.jpg)
+
+//SECTION DATES
+.section--dates
+  background-image: url(../img/dates-bg.jpg)
+  background-position: top center
+
+//SECTION EVENTS
+.section--events
+  background-image: url(../img/events-bg.jpg)
+
+//SECTION CONTACT
+.section--contact, .section--questions
+  padding-top: 7.2rem
+  padding-bottom: 11.6rem
+  text-align: center
+  display: flex
+  flex-flow: column wrap
+  align-content: center
+  align-items: center
+.section--contact
+  background-image: url(../img/light-bg.jpg)
+.contact__title
+  width: 60%
+  font-size: 6rem
+  color: $offer-title
+  font-family: $font-accent
+.contact__form
+  margin-top: 4rem
+
+//SECTION STARS
+.section--stars
+  background-color: #fff
+.stars__title
+  color: $offer-title
+  font-family: $font-accent
+  font-size: 5rem
+  text-transform: uppercase
+  margin: 2rem auto
+  text-align: center
+  &:before, &:after
+    display: inline-block
+    font-family: 'FontAwesome'
+    content: '\f005'
+    padding: 0 2rem
+    font-size: 2.4rem
+    vertical-align: 40%
+    transform: rotate(45deg)
+.c-slider-wrapper
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  align-content: center
+.c-slider__content
+  flex-grow: 4
+  flex-shrink: 0
+  flex-basis: 50%
+  padding: 2rem
+.c-slider__content__item
+  img
+    max-width: 100%
+.c-slider__list-item__control-up, .c-slider__list-item__control-down
+  position: absolute
+  z-index: 3
+  display: flex
+  justify-content: center
+  width: 100%
+  background-color: #eeeeee
+  opacity: .6
+  border-radius: 2px 2px 0 0
+  cursor: pointer
+  transition: all .2s
+  &:hover
+    background-color: #e9b647
+    opacity: 1
+    .fa-chevron-down, .fa-chevron-up
+      color: #ffffff
+      opacity: 1
+.fa-chevron-down, .fa-chevron-up
+  color: #4f4f4f
+  opacity: .2
+.c-slider__list-item__control-up
+  top: 0
+.c-slider__list-item__control-down
+  bottom: 0
+.c-slider__content-list
+  position: relative
+  padding: 2rem 0
+  height: 200px
+  overflow: hidden
+.c-slider__list-item
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  align-content: center
+  margin: 1rem 0
+  cursor: pointer
+  &:not(:last-of-type)
+    margin-bottom: 1rem
+.c-slider__list-item--is-active
+  position: relative
+  background-color: #ffe9bd // layer fill content
+  &:before
+    content: ''
+    position: absolute
+    left: -40px
+    z-index: 10
+    border-style: solid
+    border-width: 41.5px 40px 41.5px 0
+    border-color: transparent #ffe9bd transparent transparent
+  .c-slider__list-item__name
+    color: #4f4c45
+.c-slider__list-item__img
+  margin-right: 0.5rem
+.c-slider__list-item__image
+  border-radius: 50%
+  clip-path: circle(7.5rem at center)
+  height: 7rem
+  width: 7rem
+.c-slider__list-item__text
+  display: flex
+  flex-flow: column wrap
+  flex: 3 0
+.c-slider__list-item__name
+  color: #e3a51f
+  font-family: $font-accent
+  font-size: 2.4rem
+  text-transform: uppercase
+.c-slider__list-item__sub-name
+  color: #938e82
+  font-size: 1.4rem
+  font-style: italic
+
+//SECTION TEAM
+.section--team
+  background-color: #ffffff
+  padding-bottom: 0
+.team-swiper
+  overflow: hidden
+  margin-top: 5rem
+  padding-bottom: 1rem
+  position: relative
+.c-hor-slider__list-item
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  align-content: center
+  cursor: pointer
+  &:first-of-type
+    margin-left: 5rem
+  &:last-of-type
+    margin-right: 5rem
+.c-hor-slider__list-item--is-active
+  position: relative
+  background-color: #ffe9bd // layer fill content
+  &:before
+    content: ''
+    position: absolute
+    left: 50%
+    z-index: 10
+    width: 0px
+    height: 0px
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-top: 10px solid #ffe9bd
+    bottom: -10px
+  .c-hor-slider__list-item__name
+    color: #4f4c45
+.c-hor-slider__list-item__img
+  margin-right: 0.5rem
+.c-hor-slider__list-item__image
+  border-radius: 50%
+  clip-path: circle(7.5rem at center)
+  height: 7rem
+  width: 7rem
+.c-hor-slider__list-item__text
+  display: flex
+  flex-flow: column wrap
+  flex: 3 0
+.c-hor-slider__list-item__name
+  color: #e3a51f
+  font-family: $font-accent
+  font-size: 2.4rem
+  text-transform: uppercase
+.c-hor-slider__list-item__sub-name
+  color: #938e82
+  font-size: 1.4rem
+  font-style: italic
+.c-hor-slider__content__item__subtitle
+  font-size: 2.4rem
+  font-style: italic
+  color: #2f2f2f
+  padding-top: 4rem
+.c-hor-slider__content__item__title
+  font-family: $font-accent
+  color: #e4a620
+  font-size: 5rem
+  text-transform: uppercase
+.c-hor-slider__content__item__text
+  margin-top: 4rem
+  font-size: 1.4rem
+  font-family: Arial, sans-serif
+  color: #6a6a6a
+.c-hor-slider__content__item__image
+  max-width: 100%
+  max-height: 100%
+  img
+    max-width: 100%
+.team-swiper-button-next, .team-swiper-button-prev
+  position: absolute
+  z-index: 10
+  top: 20%
+  box-shadow: 1px 1px 10px #fff
+  width: 5rem
+  height: 5rem
+  background-color: rgba(255, 255, 255, 0.7)
+  text-align: center
+  border-radius: 50%
+  display: flex
+  font-size: 2rem
+  align-items: center
+  cursor: pointer
+  justify-content: center
+  color: #544d48
+  &:hover
+.team-swiper-button-next
+  right: 0
+.team-swiper-button-prev
+  left: 0
+//SECTION MAP
+.section--map
+  height: 80vh
+  position: relative
+#map
+  position: absolute
+  width: 100%
+  height: 100%
+.map-descriptor
+  position: absolute
+  background-color: rgba(0,0,0,.5)
+  padding: 2rem 1rem
+  width: 70%
+  text-align: left
+  margin-bottom: 4rem
+  z-index: 10
+  top: 50%
+  left: 4rem
+.map-descriptor__pretitle
+  color: #ffffff
+  font-size: 2rem
+.map-descriptor__title
+  margin-top: 1rem
+  font-family: $font-accent
+  color: $header-title-color
+  font-size: 5.3rem
+  text-transform: uppercase
+.map-descriptor__adress
+  color: #a1a19e
+  margin-top: 1rem
+  font-size: 2rem
+  font-style: italic
+
+//SECTION QUESTIONS
+.section--questions
+  background-image: url(../img/dark-bg.jpg)
+  background-position: center top
+
+//FOOTER
+.footer
+  background-color: #f8f8f8
+  background-image: url(../img/footer-bg.jpg)
+  background-position: top right
+  //background-size: contain
+  background-repeat: no-repeat
+.footer__header
+  width: 100%
+.footer__bottom
+  padding: 3rem 0
+.footer__socials__list
+  display: flex
+  flex-grow: 1
+  flex-shrink: 0
+  justify-content: flex-start
+  align-content: center
+  align-items: center
+  margin-right: 8%
+.list__item
+  margin-right: 2rem
+  width: 5rem
+  height: 5rem
+  border-radius: 50%
+  display: flex
+  justify-content: center
+  flex-flow: column wrap
+  text-align: center
+  background-color: #e8a608
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(255,255,255,.1) 100%)
+  &:hover
+    background-color: #f6b823
+  &:last-of-type
+    margin-right: 0
+.socials-link
+  font-size: 2rem
+  color: #ffffff
+.fa-airbnb
+  &:before
+    content: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1Ni43cHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1Ni43IDU2Ljc7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1Ni43IDU2LjciIHdpZHRoPSI1Ni43cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik01MC4zMDc1LDM4LjIwODJjLTAuMjQ1NC0wLjU4ODYtMC40OTA4LTEuMjI2Ny0wLjczNjItMS43NjYyYy0wLjM5MjQtMC44ODMxLTAuNzg1LTEuNzE3NS0xLjEyODUtMi41MDI0bC0wLjA0OTEtMC4wNDkgIGMtMy4zODU1LTcuMzU5Ny03LjAxNjQtMTQuODE3OS0xMC44NDM0LTIyLjE3NzVsLTAuMTQ3Mi0wLjI5NDZjLTAuMzkyNi0wLjczNjItMC43ODU0LTEuNTIxMS0xLjE3NzYtMi4zMDYxICBjLTAuNDkwOS0wLjg4My0wLjk4MTMtMS44MTU2LTEuNzY2Ni0yLjY5ODhjLTEuNTY5OS0xLjk2MjUtMy44MjY5LTMuMDQxOS02LjIzMTEtMy4wNDE5Yy0yLjQ1MzQsMC00LjY2MTQsMS4wNzk0LTYuMjgwNywyLjk0MzggIGMtMC43MzU4LDAuODgzNC0xLjI3NTcsMS44MTU3LTEuNzY2MiwyLjY5ODhjLTAuMzkyNiwwLjc4NDktMC43ODUzLDEuNTcwMS0xLjE3NzYsMi4zMDZsLTAuMTQ3MiwwLjI5NDYgIGMtMy43NzgzLDcuMzU5Ni03LjQ1ODMsMTQuODE3OS0xMC44NDM4LDIyLjE3NzVsLTAuMDQ5MSwwLjA5ODJjLTAuMzQzMiwwLjc4NTMtMC43MzU4LDEuNjE5My0xLjEyODUsMi41MDIzICBjLTAuMjQ1LDAuNTM5Ni0wLjQ5MDUsMS4xMjg1LTAuNzM1OCwxLjc2NjNjLTAuNjM4MiwxLjgxNTctMC44MzQxLDMuNTMyNy0wLjU4OSw1LjI5OTNjMC41Mzk5LDMuNjgsMi45OTMyLDYuNzcxMSw2LjM3ODgsOC4xNDUgIGMxLjI3NTcsMC41Mzk1LDIuNjAwMywwLjc4NDksMy45NzQyLDAuNzg0OWMwLjM5MjYsMCwwLjg4MzUtMC4wNDksMS4yNzU3LTAuMDk4MmMxLjYxOTMtMC4xOTYzLDMuMjg3NC0wLjczNTgsNC45MDY3LTEuNjY4NCAgYzIuMDExNi0xLjEyODUsMy45MjU0LTIuNzQ3NSw2LjA4NDMtNS4xMDI3YzIuMTU4OSwyLjM1NTIsNC4xMjE0LDMuOTc0Miw2LjA4NDQsNS4xMDI3YzEuNjE4OSwwLjkzMjYsMy4yODczLDEuNDcyMSw0LjkwNjMsMS42Njg0ICBjMC4zOTI3LDAuMDQ5MSwwLjg4MzUsMC4wOTgyLDEuMjc1NywwLjA5ODJjMS4zNzQsMCwyLjc0NzktMC4yNDU0LDMuOTc0Ni0wLjc4NDljMy40MzQ2LTEuMzczOSw1LjgzODktNC41MTQxLDYuMzc4NC04LjE0NSAgQzUxLjE0MTYsNDEuNzQxLDUwLjk0NTIsNDAuMDI0LDUwLjMwNzUsMzguMjA4MnogTTI4LjE3ODcsNDAuNzU5N2MtMi42NDk3LTMuMzM2NC00LjM2NjgtNi40NzY1LTQuOTU1OC05LjEyNjIgIGMtMC4yNDU0LTEuMTI4NS0wLjI5NDUtMi4xMDk3LTAuMTQ3Mi0yLjk5MjljMC4wOTgyLTAuNzg0OSwwLjM5MjYtMS40NzIxLDAuNzg1NC0yLjA2MDdjMC45MzIxLTEuMzI0OSwyLjUwMi0yLjE1ODgsNC4zMTc3LTIuMTU4OCAgYzEuODE1MywwLDMuNDM0NywwLjc4NDksNC4zMTc3LDIuMTU4OGMwLjM5MjcsMC41ODg2LDAuNjg3MiwxLjI3NTcsMC43ODU0LDIuMDYwN2MwLjE0NjksMC44ODMyLDAuMDk3OCwxLjkxMzUtMC4xNDczLDIuOTkyOSAgQzMyLjU0NTUsMzQuMjM0MSwzMC44MjgzLDM3LjM3NDIsMjguMTc4Nyw0MC43NTk3eiBNNDcuNzU2LDQzLjA2NThjLTAuMzQzNiwyLjU1MTYtMi4wNjA3LDQuNzU5NS00LjQ2NDksNS43NDA4ICBjLTEuMTc3NywwLjQ5MDgtMi40NTM0LDAuNjM4MS0zLjcyOTEsMC40OTA4Yy0xLjIyNjctMC4xNDczLTIuNDUzNC0wLjUzOTktMy43MjkxLTEuMjc1NyAgYy0xLjc2NjItMC45ODEzLTMuNTMyNC0yLjUwMjQtNS41OTM0LTQuNzU5NGMzLjIzODctMy45NzQ2LDUuMjAxMS03LjYwNSw1LjkzNy0xMC44NDM0YzAuMzQzNi0xLjUyMTIsMC4zOTI2LTIuODk1MSwwLjI0NTQtNC4xNzA5ICBjLTAuMTk2Mi0xLjIyNjctMC42MzgxLTIuMzU1Mi0xLjMyNDgtMy4zMzY0Yy0xLjUyMTItMi4yMDgtNC4wNzIzLTMuNDgzNy02LjkxODMtMy40ODM3Yy0yLjg0NTYsMC01LjM5NzIsMS4zMjQ5LTYuOTE4MywzLjQ4MzcgIGMtMC42ODY4LDAuOTgxMy0xLjEyODUsMi4xMDk3LTEuMzI0OSwzLjMzNjRjLTAuMTk2LDEuMjc1OC0wLjE0NzMsMi42OTg4LDAuMjQ1NCw0LjE3MDkgIGMwLjczNTksMy4yMzgzLDIuNzQ3OSw2LjkxNzksNS45MzcxLDEwLjg5MjRjLTIuMDExNiwyLjI1NzEtMy44MjczLDMuNzc4Mi01LjU5MzUsNC43NTk0ICBjLTEuMjc1NywwLjczNTktMi41MDI0LDEuMTI4NS0zLjcyOTEsMS4yNzU4Yy0xLjMyNDksMC4xNDY5LTIuNjAwNi0wLjA0OTEtMy43MjkxLTAuNDkwOCAgYy0yLjQwNDMtMC45ODEzLTQuMTIxMy0zLjE4OTMtNC40NjQ5LTUuNzQwOGMtMC4xNDcyLTEuMjI2Ni0wLjA0OS0yLjQ1MzQsMC40NDE4LTMuODI3M2MwLjE0NzMtMC40OTA0LDAuMzkyMy0wLjk4MTMsMC42Mzc3LTEuNTY5OCAgYzAuMzQzNS0wLjc4NSwwLjczNjItMS42MTkzLDEuMTI4NS0yLjQ1MzRsMC4wNDkxLTAuMDk4MmMzLjM4NTQtNy4zMTA2LDcuMDE2NS0xNC43Njg4LDEwLjc5NDctMjIuMDMwN2wwLjE0NzMtMC4yOTQxICBjMC4zOTIyLTAuNzM2MiwwLjc4NDktMS41MjEyLDEuMTc3Ni0yLjI1NzFjMC4zOTIyLTAuNzg1MywwLjgzNC0xLjUyMTEsMS4zNzM1LTIuMTU4OEMyNS4zODIxLDcuMjQ4MSwyNi43NTU2LDYuNjEsMjguMjc2OCw2LjYxICBzMi44OTUyLDAuNjM4MSwzLjkyNTUsMS44MTU2YzAuNTM5NSwwLjYzNzcsMC45ODEzLDEuMzczNiwxLjM3NCwyLjE1ODhjMC4zOTIyLDAuNzM1OSwwLjc4NDksMS41MjA4LDEuMTc3NSwyLjI1NzFsMC4xNDY5LDAuMjk0MSAgYzMuNzI5MSw3LjMxMSw3LjM2LDE0Ljc2ODcsMTAuNzQ1NiwyMi4wNzk3djAuMDQ5MWMwLjM5MjMsMC43ODQ5LDAuNzM1OSwxLjY2ODQsMS4xMjg1LDIuNDUzNCAgYzAuMjQ1NCwwLjU4ODUsMC40OTA1LDEuMDc5NCwwLjYzNzcsMS41Njk4QzQ3LjgwNTEsNDAuNTYzNSw0Ny45NTI0LDQxLjc5MDIsNDcuNzU2LDQzLjA2NTh6Ii8+PC9zdmc+")
+    width: 20%
+    height: 20%
+    path
+      fill: #ffffff
+.footer__phones
+  display: flex
+  flex-flow: column wrap
+.footer__text
+  font-size: 2.2rem
+  color: #665942
+  font-family: $font-accent
+  text-align: right
+  margin-bottom: 1rem
+  &:last-of-type
+    margin-bottom: 0
+
+// VEX MODAL
+.vex.vex-theme-plain
+  .vex-content
+    width: 62rem
+    h1
+      text-transform: uppercase
+      font-size: 5rem
+      color: #e3a51f
+      text-align: center
+      font-family: $font-accent
+      padding: 2rem 0 1rem 0
+    p
+      font-family: Arial, sans-serif
+      text-align: center
+      font-size: 1.4rem
+      color: #696969
+      width: 64%
+      margin: 0 auto
+.vex-dialog-form
+  padding: 2rem
+  border: 3px solid #e4a620
+.modal-form__group
+  position: relative
+  .ui-datepicker-trigger
+    position: absolute
+    right: 1.6rem
+    top: 56%
+.ui-datepicker
+  z-index: 12 !important
+.modal-form__group__title
+  font-size: 1.2rem
+  color: #6a6a6a
+.modal-form__group__input
+  width: 80%
+.vex.vex-theme-plain .vex-dialog-button
+  float: none
+  margin: 0 auto
+  width: 40%
+  text-transform: none
+  font-family: $font
+.vex.vex-theme-plain .vex-close
+  top: -3px
+  right: -4rem
+  &:hover:before
+    color: #ffffff
+    background: #e4a620
+  &:before
+    font-size: 4rem
+    color: #ffffff
+.vex.vex-theme-plain .vex-dialog-form .vex-dialog-input textarea, .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="date"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="datetime"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="datetime-local"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="email"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="month"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="number"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="password"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="search"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="tel"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="text"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="time"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="url"], .vex.vex-theme-plain .vex-dialog-form .vex-dialog-input input[type="week"]
+  width: 100%
+  height: 3.6rem
+  font-size: 1.4rem
+  font-style: italic
+  font-family: Arial, sans-serif
+  background-color: #fff
+  border: 1px solid #b9b9b9
+
+@import "media"
