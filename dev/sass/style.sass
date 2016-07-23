@@ -81,6 +81,7 @@ input[type="date"]:after
 .c-nav
   background-image: url(../img/header-menu-bg.png)
   width: 100%
+  box-shadow: inset 0px -2px 12px -6px #000
 .c-nav--nobg
   background-image: none
 .c-nav__list
@@ -92,7 +93,7 @@ input[type="date"]:after
   font-family: $font-secondary
   text-transform: uppercase
   text-align: center
-  width: 86%
+  width: 84%
   margin-left: auto
 .c-nav__list--full
   width: 100%
@@ -114,7 +115,19 @@ input[type="date"]:after
   color: #665942
 .header__logo
   max-width: 100%
-  margin-top: -3.2rem
+  margin-top: -3.6rem
+  position: relative
+.br
+  position: relative
+  &:after
+    display: block
+    content: ''
+    height: 50% //You can change this if you want smaller/bigger borders
+    width: 1px
+    position: absolute
+    right: -1px
+    top: 24% // If you want to set a smaller height and center it, change this value
+    background-color: #dddddd // The color of your border
 .header-line
   padding: 1rem 0 0 0
 .header-line__title
@@ -252,6 +265,7 @@ input[type="date"]:after
   display: block
   margin-top: 1rem
   margin-left: auto
+  font-family: Arial, sans-serif
   &:hover
     background-color: #fdd063
     box-shadow: 0 1px 1px rgba(104,72,15,.63), inset 0 1px 0 rgba(255,255,255,.3)
@@ -320,7 +334,7 @@ input[type="date"]:after
   text-align: center
   margin-top: 2rem
 .item__img
-  clip-path: circle(8.5rem at center)
+  clip-path: circle(8.2rem at center)
   height: 18rem
   max-width: 100%
   max-height: 100%
@@ -480,44 +494,67 @@ input[type="date"]:after
   top: 0
 .c-slider__list-item__control-down
   bottom: 0
-.c-slider__content-list
+.stars-swiper
   position: relative
-  padding: 2rem 0
-  height: 200px
+  padding: 2rem 0 2rem 4rem
   overflow: hidden
+  height: 500px
 .c-slider__list-item
-  display: flex
-  flex-flow: row wrap
-  align-items: center
-  align-content: center
   margin: 1rem 0
   cursor: pointer
+  height: 92px
+  padding: 1rem 0
+  border: 1px solid transparent
+  background-color: #fff
+  position: relative
+  transition: border .3s
   &:not(:last-of-type)
     margin-bottom: 1rem
+  &:hover:not(.c-slider__list-item--is-active)
+    border: 1px solid #d9d9d9
+  &:hover:not(.c-slider__list-item--is-active):before
+    content: ""
+    position: absolute
+    left: -10%
+    width: 6.7rem
+    height: 6.7rem
+    transform: rotate(45deg)
+    background-color: #ffffff
+    top: 13.5%
+    border-bottom: 1px solid #d9d9d9
+    border-left: 1px solid #d9d9d9
+    transition: border .3s
 .c-slider__list-item--is-active
   position: relative
   background-color: #ffe9bd // layer fill content
+  transition: none
   &:before
-    content: ''
+    content: ""
     position: absolute
-    left: -40px
-    z-index: 10
-    border-style: solid
-    border-width: 41.5px 40px 41.5px 0
-    border-color: transparent #ffe9bd transparent transparent
+    left: -11%
+    width: 6.8rem
+    height: 6.8rem
+    z-index: -1
+    transform: rotate(45deg)
+    background-color: #ffe9bd
+    top: 13.5%
+    transition: none
   .c-slider__list-item__name
     color: #4f4c45
 .c-slider__list-item__img
-  margin-right: 0.5rem
+  display: inline-block
+  vertical-align: middle
+  width: 30%
+  text-align: center
 .c-slider__list-item__image
   border-radius: 50%
   clip-path: circle(7.5rem at center)
   height: 7rem
   width: 7rem
 .c-slider__list-item__text
-  display: flex
-  flex-flow: column wrap
-  flex: 3 0
+  display: inline-block
+  vertical-align: middle
+  width: 60%
 .c-slider__list-item__name
   color: #e3a51f
   font-family: $font-accent
@@ -534,19 +571,41 @@ input[type="date"]:after
   padding-bottom: 0
 .team-swiper
   overflow: hidden
-  margin-top: 5rem
-  padding-bottom: 1rem
+  margin-top: 7rem
+  padding-bottom: 3rem
   position: relative
 .c-hor-slider__list-item
+  background-color: #fff
+  position: relative
   display: flex
   flex-flow: row wrap
   align-items: center
   align-content: center
+  justify-content: center
   cursor: pointer
+  border: 1px solid transparent
+  padding: .5rem 0.8rem
+  transition: border .3s
+  width: 260px
+  &:last-of-type
+    margin-right: 260px
   &:first-of-type
     margin-left: 5rem
   &:last-of-type
     margin-right: 5rem
+  &:hover
+    border: 1px solid #d9d9d9
+  &:hover:not(.c-hor-slider__list-item--is-active):before
+    content: ' '
+    width: 14px
+    height: 14px
+    background-color: #ffffff
+    position: absolute
+    bottom: -9px
+    transform: rotate(45deg)
+    left: 50%
+    border-bottom: 1px solid #d9d9d9
+    border-right: 1px solid #d9d9d9
 .c-hor-slider__list-item--is-active
   position: relative
   background-color: #ffe9bd // layer fill content
@@ -561,10 +620,13 @@ input[type="date"]:after
     border-right: 10px solid transparent
     border-top: 10px solid #ffe9bd
     bottom: -10px
+    transition: none
+  &:hover
+    border: 1px solid transparent
   .c-hor-slider__list-item__name
     color: #4f4c45
 .c-hor-slider__list-item__img
-  margin-right: 0.5rem
+  margin-right: 2rem
 .c-hor-slider__list-item__image
   border-radius: 50%
   clip-path: circle(7.5rem at center)
@@ -573,7 +635,7 @@ input[type="date"]:after
 .c-hor-slider__list-item__text
   display: flex
   flex-flow: column wrap
-  flex: 3 0
+  flex: 0 0
 .c-hor-slider__list-item__name
   color: #e3a51f
   font-family: $font-accent
@@ -610,7 +672,7 @@ input[type="date"]:after
   box-shadow: 1px 1px 10px #fff
   width: 5rem
   height: 5rem
-  background-color: rgba(255, 255, 255, 0.7)
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9) )
   text-align: center
   border-radius: 50%
   display: flex
@@ -618,8 +680,11 @@ input[type="date"]:after
   align-items: center
   cursor: pointer
   justify-content: center
-  color: #544d48
+  color: #dddddd
   &:hover
+    color: #544d48
+  &:active
+    color: #e9b649
 .team-swiper-button-next
   right: 0
 .team-swiper-button-prev
@@ -656,6 +721,12 @@ input[type="date"]:after
   margin-top: 1rem
   font-size: 2rem
   font-style: italic
+  vertical-align: middle
+  &:before
+    content: url(../img/metro-icon.png)
+    vertical-align: -42%
+    padding-right: .3rem
+    opacity: .7
 
 //SECTION QUESTIONS
 .section--questions
